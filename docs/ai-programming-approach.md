@@ -32,8 +32,9 @@ Do not skip AC when agents implement: criteria are the contract.
 1. One-command (or clearly documented) **local** run—emulators or local services before cloud.  
 2. **Unit + integration** tests runnable in one command; keep them green.  
 3. **CI** on pull requests (or main) for tests.  
-4. **Deploy** (Hosting, containers, etc.) when the human asks or the checklist requires it—not as a substitute for a working local path.  
-5. Never commit secrets (`.env`, keys); document required env vars instead.
+4. **Test / staging deploy** with a separate project/env/config + secrets; document URL + commit; verify (smoke/checklist) on test. Never use prod credentials or data stores for test.  
+5. **Prod deploy** only when the human asks or a rubric requires prod—same verified commit/artifact when possible. Do not promote untested commits, share env files across test/prod, or treat the test URL as done when the ask was prod.  
+6. Never commit secrets (`.env`, keys); document required env vars instead.
 
 ## 5. Demo vs production data
 
